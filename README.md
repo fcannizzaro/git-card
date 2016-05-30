@@ -2,6 +2,7 @@
 AngularJS Github Card 
 
 <!--
+  GIT-CARD
   title: Material Tip
   description: Android Library for prompt tip
   clone: true
