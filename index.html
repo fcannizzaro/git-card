@@ -75,16 +75,33 @@
 
 						<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 							<div class="mdl-tabs__tab-bar">
-
 								<a href="#hosted" class="mdl-tabs__tab is-active">Hosted</a>
+								<a href="#download" class="mdl-tabs__tab">Download</a>
 								<a href="#npm" class="mdl-tabs__tab">NPM</a>
 								<a href="#bower" class="mdl-tabs__tab">Bower</a>
 							</div>
 
 							<div class="mdl-tabs__panel is-active" id="hosted">
 								<br/>
-								<p>Just add the following <b>&#60;link&#62;</b> and <b>&#60;script&#62;</b> elements into your HTML page:</p>
-								<script src="https://gist.github.com/fcannizzaro/ed464e566054c92ccb0a6ae84910dabc.js"></script>
+								<p>Just add the following <b>&#60;link&#62;</b> and <b>&#60;script&#62;</b> elements into your HTML page:</p>							
+								<div class="code">
+									&#60;link rel="stylesheet" type="text/css" href="http://fcannizzaro.github.io/git-card/lib/git-card.min.css"&#62;<br>
+								</div>
+								<br>
+								<div class="code">
+									&#60;script src="http://fcannizzaro.github.io/git-card/git-card/lib/git-card.js"&#62;&#60;/script&#62;
+								</div>
+							</div>
+
+							<div class="mdl-tabs__panel" id="download">
+								<br/>								
+									<button class="mdl-button mdl-js-button mdl-button--raised">
+										<a href="lib/git-card.zip" target="_blank">
+											DOWNLOAD GIT-CARD
+										</a>
+									</button>			
+								
+								<br/>
 							</div>
 
 							<div class="mdl-tabs__panel" id="npm">
