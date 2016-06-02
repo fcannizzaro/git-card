@@ -8,10 +8,10 @@ See http://fcannizzaro.github.io/git-card/
 
 ## NPM
 ```sh
-	npm install git-card --save
+npm install git-card --save
 ```
 
 ## Bower
 ```sh
-	bower install git-card --save
+bower install git-card --save
 ```
