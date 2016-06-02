@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Git-Card</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="git-card/git-card.js"></script>
+	<script src="assets/js.js"></script>
+	<script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+	<script src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body ng-controller="ctrl">
+	
+	<div class="layout-transparent mdl-layout mdl-js-layout">
+		<header class="mdl-layout__header mdl-layout__header--transparent">
+			<div class="mdl-layout__header-row">
+				<span class="mdl-layout-title">GIT-CARD<br><small>AngularJS github card</small></span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link">
+						<a class="github-button"
+						href="https://github.com/fcannizzaro/git-card"
+						data-count-href="/fcannizzaro/git-card/stargazers"
+						data-count-api="/repos/fcannizzaro/git-card#stargazers_count"
+						data-count-aria-label="# stargazers on GitHub"
+						aria-label="Star fcannizzaro/git-card on GitHub">Star</a>
+					</a>
+					<a class="mdl-navigation__link" target="_self" href="#concept">How it works</a>
+					<a class="mdl-navigation__link" target="_self" href="#get-started">Get Started</a>
+					<a ng-show="step >= 2" class="mdl-navigation__link" target="_self" href="#custom">Create your own</a>		
+				</nav>
+			</div>
+		</header>	
+
+		<main class="mdl-layout__content">
+			<center>
+
+				<div class="mdl-grid preview">
+					<div class="mdl-cell mdl-cell--4-col"><git-card user='fcannizzaro' repo='material-tip'></git-card></div>
+					<div class="mdl-cell mdl-cell--4-col"><git-card user='fcannizzaro' repo='material-stepper'></git-card></div>
+					<div class="mdl-cell mdl-cell--4-col"><git-card user='fcannizzaro' repo='av-light'></git-card></div>
+				</div>
+
+				<div id='concept' class="mdl-grid card">
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<h2>How it works ?</h2>
+
+						<p>Regex Matching on repo readme</p>
+
+						<div class="mdl-grid">
+
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+								<h3>Raw</h3>
+								<script src="https://gist.github.com/fcannizzaro/58c13e7cb2dc26d6eb744133d835ca03.js"></script>
+							</div>
+
+							<div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+								<h3>Preview</h3>
+								<script src="https://gist.github.com/fcannizzaro/6065de0cc7046d7f0a15ec64168e478c.js"></script>		
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div id="get-started" class="mdl-grid card mdl-cell--6-col">
+
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<h2>Get Started</h2>
+
+						<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+							<div class="mdl-tabs__tab-bar">
+
+								<a href="#hosted" class="mdl-tabs__tab is-active">Hosted</a>
+								<a href="#npm" class="mdl-tabs__tab">NPM</a>
+								<a href="#bower" class="mdl-tabs__tab">Bower</a>
+							</div>
+
+							<div class="mdl-tabs__panel is-active" id="hosted">
+								<br/>
+								<p>Just add the following <b>&#60;link&#62;</b> and <b>&#60;script&#62;</b> elements into your HTML page:</p>
+								<script src="https://gist.github.com/fcannizzaro/ed464e566054c92ccb0a6ae84910dabc.js"></script>
+							</div>
+
+							<div class="mdl-tabs__panel" id="npm">
+								<br>
+								<p>Run the following command in a shell:</p>
+								<div class="code">npm install git-card --save</div>
+							</div>
+
+							<div class="mdl-tabs__panel" id="bower">
+								<br>
+								<p>Run the following command in a shell:</p>
+								<div class="code">bower install git-card --save</div>
+							</div>
+
+						</div>						
+
+					</div>
+
+				</div>
+
+				<div id="choose-user" class="mdl-grid card generator">
+
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<form ng-show="step >= 0">
+
+							<h2>1. Choose user</h2>
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="user" ng-model="user">
+								<label class="mdl-textfield__label" for="user">Github User</label>
+							</div>
+
+							<br/>
+
+							<button ng-click="getRepos()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+								CHOOSE REPO
+							</button>						
+
+						</form>						
+
+					</div>
+
+				</div>
+
+				<br/>
+				<br/>
+
+				<div ng-show="repos.length >= 1" id="repos" class="mdl-grid card generator">
+
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<h2>2. Choose repo</h2>				
+						<ul class="mdl-list mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+							<li ng-click="setRepo(repo)" ng-repeat="repo in repos | orderBy:'toString()'" class="mdl-list__item">
+								<span class="mdl-list__item-primary-content" ng-bind="repo"></span>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+				<br/>
+				<br/>
+
+				<div ng-show="step >= 2" id="directive" class="mdl-grid card generator">
+
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<h2>3. Angular Directive</h2>
+
+						<div id="card"></div>
+
+						<br/>
+						<br/>
+
+						<div class="code">
+							&#60;git-card user='{{user}}' repo='{{repo}}'&#62;&#60;/git-card&#62;
+						</div>
+
+					</div>
+				</div>
+
+				<div ng-show="step >= 2" id="custom" class="mdl-grid card generator custom-gen">
+
+					<div class="mdl-cell mdl-cell--12-col">
+
+						<h2>4. Create your own <small>(for repo owner)</small></h2>
+
+						<div ng-include="'git-card/card.html'"></div>
+
+						<form class="mdl-cell mdl-cell--6-col mdl-cell--12-col-phone">
+
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="card_title" ng-model="card.title">
+								<label class="mdl-textfield__label" for="card_title">Title</label>
+							</div>						
+							<br>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="card_description" ng-model="card.description">
+								<label class="mdl-textfield__label" for="card_description">Description</label>
+							</div>
+							<br>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="cover" ng-model="card.cover">
+								<label class="mdl-textfield__label" for="cover">Cover</label>
+							</div>
+							<br>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="number" id="coverHeight" ng-model="card.cover_height">
+								<label class="mdl-textfield__label" for="coverHeight">Cover Height</label>
+							</div>	
+							<br>
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="number" id="cardWidth" ng-model="card.card_width">
+								<label class="mdl-textfield__label" for="cardWidth">Card Width</label>
+							</div>
+							<br>						
+							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<input class="mdl-textfield__input" type="text" id="color" ng-model="card.color">
+								<label class="mdl-textfield__label" for="color">Color</label>
+							</div>
+
+						</form>
+
+						<center>
+
+							<div class="mdl-grid checks">
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="clone">
+										<input type="checkbox" id="clone" class="mdl-checkbox__input" ng-model='card.clone' checked>
+										<span class="mdl-checkbox__label">Clone (button)</span>
+									</label>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="count-watchers">
+										<input type="checkbox" id="count-watchers" class="mdl-checkbox__input" ng-model='card.counter_watchers' checked>
+										<span class="mdl-checkbox__label">Watchers (counter)</span>
+									</label>
+								</div>
+
+								<div class="mdl-cell mdl-cell--12-col">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="count-star">
+										<input type="checkbox" id="count-star" class="mdl-checkbox__input" ng-model='card.counter_stargazers' checked>
+										<span class="mdl-checkbox__label">Stargazers (counter)</span>
+									</label>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="count-forks">
+										<input type="checkbox" id="count-forks" class="mdl-checkbox__input" ng-model='card.counter_forks' checked>
+										<span class="mdl-checkbox__label">Forks (counter)</span>
+									</label>
+								</div>
+								<div class="mdl-cell mdl-cell--12-col">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="count-issues">
+										<input type="checkbox" id="count-issues" class="mdl-checkbox__input" ng-model='card.counter_issues' checked>
+										<span class="mdl-checkbox__label">Issues (counter)</span>
+									</label>
+								</div>												
+
+							</div>
+
+						</center>
+
+						<br/>
+
+						<br>
+
+						<h2>Add this in your repo readme<br/><small>it is hidden!</small></h2>
+
+						<div class="code">
+							&#60;!--<br>
+							<span>GIT-CARD<br></span>
+							<span ng-if='card.title != github.title'>title: {{card.title}}<br></span>
+							<span ng-if='card.description != github.description'>description: {{card.description}}<br></span>
+							<span ng-if="!card.clone">clone: false<br></span>
+							<span ng-if="card.cover">cover: {{card.cover}}<br></span>
+							<span ng-if="card.card_width != 400">card_width: {{card.card_width}}<br></span>
+							<span ng-if="card.cover_height != 120">cover_height: {{card.cover_height}}<br></span>
+							<span>color: {{card.color}}<br></span>
+							<span ng-if="!card.counter_stargazers">counter_stargazers: false<br></span>
+							<span ng-if="!card.counter_forks">counter_forks: false<br></span>
+							<span ng-if="!card.counter_issues">counter_issues: false<br></span>
+							<span ng-if="!card.counter_watchers">counter_watchers: false<br></span>
+							--&#62;<br>
+						</div>
+
+						<br/>
+						<br/>
+
+						<h2>Badge<br/><small>Support this project</small></h2>
+
+						<img src="assets/git-card.svg">
+
+						<br/>
+						<br/>
+
+						<div class="code">[![git-card](git-card.svg)](http://github.com?user={{user}}&repo={{repo}})</div>
+
+					</div>
+
+				</div>
+
+			</center>
+
+		</main>
+
+	</div>
+
+</body>
+
+</html>
+

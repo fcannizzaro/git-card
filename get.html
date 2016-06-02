@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Git-Card > GET</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script type="text/javascript" src="git-card/git-card.js"></script>
+	<script type="text/javascript" src="assets/get.js"></script>
+</head>
+
+<body ng-controller="ctrl">
+	
+	<center>
+
+		<div class="mdl-grid card" style="display: inline-block; padding: 24px;">
+
+			<div class="mdl-cell mdl-cell--12-col">
+				
+				<git-card user='{{user}}' repo='{{repo}}'></git-card>
+
+					<br/>
+					<br/>
+
+					<h3>Angular Directive</h3>
+
+					<div class="code">
+						&#60;git-card user='{{user}}' repo='{{repo}}'&#62;&#60;/git-card&#62;
+					</div>
+
+				</div>
+
+			</div>
+
+		</center>
+
+	</body>
+
+	</html>
+

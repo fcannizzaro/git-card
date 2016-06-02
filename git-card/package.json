@@ -1,0 +1,24 @@
+{
+    "name": "git-card",
+    "version": "1.0.0",
+    "description": "AngularJS Github Card",
+    "main": "git-card.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fcannizzaro/git-card.git"
+    },
+    "keywords": [
+        "angularjs",
+        "github",
+        "card"
+    ],
+    "author": "Francesco Cannizzaro (fcannizzaro)",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/fcannizzaro/git-card/issues"
+    },
+    "homepage": "http://fcannizzaro.github.io/git-card/"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "git-card",
+  "description": "AngularJS Github Card",
+  "main": "git-card.js",
+  "authors": [
+    "Francesco Cannizzaro (fcannizzaro)"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "angularjs",
+    "github",
+    "card"
+  ],
+  "homepage": "http://fcannizzaro.github.io/git-card/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
