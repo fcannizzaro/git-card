@@ -3,117 +3,119 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css);
 @import url(https://raw.githubusercontent.com/isagalaev/highlight.js/master/src/styles/github-gist.css);
 
-	body{
-		background-color: #eee;
-	}
+body{
+	background-color: #eee;
+}
 
-	a{
-		text-decoration: none;
-	}
+a{
+	text-decoration: none;
+}
 
-	.layout-transparent {
-		background-image: url('header.jpg');
-		background-position: bottom;
-		background-size: cover;
-	}
-	.layout-transparent .mdl-layout__header {
-		color: white;
-	}
-	
-	.preview{
-		background-color: rgba(0,0,0,0.0)
-		padding-bottom: 32px;
-		padding-top: 64px;
-	}
-	.card{
-		background-color: rgba(255,255,255,.95);
-		border-radius: 3px;
-		box-shadow: 0px 3px 4px rgba(0,0,0,0.2);
-		margin-top: 80px;
-	}
-	.italic{
-		font-style: italic;
-		color: #424242;
-	}
-	.generator{
-		display: inline-block;  
-		margin-top: 64px;
-		padding: 16px 24px 16px 24px;
-	}
-	
-	.checks{
-		width: 320px;
-	}
+.layout-transparent {
+	background-image: url('header.jpg');
+	background-position: bottom;
+	background-size: cover;
+}
+.layout-transparent .mdl-layout__header {
+	color: white;
+}
 
-	h3{
-		margin-top: 0px;
-	}
+.preview{
+	background-color: rgba(0,0,0,0.0)
+	padding-bottom: 32px;
+	padding-top: 64px;
+}
 
-	h2{
-		margin-top: 16px;
-		margin-bottom: 16px;
-	}
+.card{
+	background-color: rgba(255,255,255,.95);
+	border-radius: 3px;
+	box-shadow: 0px 3px 4px rgba(0,0,0,0.2);
+	margin-top: 80px;
+}
 
-	.mdl-list__item{
-		background-color: #EEEEEE;
-		border-radius: 3px;
-		cursor: pointer;
-		display: inline-block;
-		margin: 4px;
-	}
+.italic{
+	font-style: italic;
+	color: #424242;
+}
+.generator{
+	display: inline-block;  
+	margin-top: 64px;
+	padding: 16px 24px 16px 24px;
+}
 
-	.mdl-grid a, h2, h3{
-		color: #424242;
-	}
+.checks{
+	width: 320px;
+}
 
-	.code{
-		background-color: #E0E0E0;
-		color: #212121;
-		border-radius: 3px;
-		display: inline-block;
-		font-family: "Roboto";
-		font-size: 16px;
-		font-weight: bold;
-		margin-bottom: 16px;
-		padding: 16px;
-		text-align: left;
-	}
+h3{
+	margin-top: 0px;
+}
 
-	.custom-gen{
-		border-radius: 0px;
-		display: block;
-		margin-bottom: 64px;
-	}
+h2{
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
 
-	.mdl-checkbox{
-		text-align: left;
-	}
+.mdl-list__item{
+	background-color: #EEEEEE;
+	border-radius: 3px;
+	cursor: pointer;
+	display: inline-block;
+	margin: 4px;
+}
 
-	#repos{
-		min-width: 300px;
-	}
+.mdl-grid a, h2, h3{
+	color: #424242;
+}
 
-	.error{
-		background: #E53935;
-		color: #fff;
-		text-align: center;
-		padding: 8px;
-	}
+.code{
+	background-color: #E0E0E0;
+	color: #212121;
+	border-radius: 3px;
+	display: inline-block;
+	font-family: "Roboto";
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 16px;
+	padding: 16px;
+	text-align: left;
+}
 
-	.markdown-body{
-		padding: 24px !important; 
-	}
+.custom-gen{
+	border-radius: 0px;
+	display: block;
+	margin-bottom: 64px;
+}
+
+.mdl-checkbox{
+	text-align: left;
+}
+
+#repos{
+	min-width: 300px;
+}
+
+.error{
+	background: #E53935;
+	color: #fff;
+	text-align: center;
+	padding: 8px;
+}
+
+.markdown-body{
+	padding: 24px !important; 
+}
 
 
-	.mdl-layout-title small{
-		opacity: 0.8;
-		font-size: 13px;
-	}
+.mdl-layout-title small{
+	opacity: 0.8;
+	font-size: 13px;
+}
 
-	#get-started .gist{
-		width: 550px;
-	}
+#get-started .gist{
+	width: 550px;
+}
 
-	.code span{
-		margin-left: 16px;
-	}
+.code span{
+	margin-left: 16px;
+}
