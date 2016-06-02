@@ -17,6 +17,7 @@
         "node_modules",
         "bower_components",
         "test",
+        "project.png",
         "git-card.zip",
         "tests"
     ]
