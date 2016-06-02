@@ -1,5 +1,5 @@
 # git-card
-[preview](https://raw.githubusercontent.com/fcannizzaro/git-card/master/project.png)
+![preview](https://raw.githubusercontent.com/fcannizzaro/git-card/master/project.png)
 
 AngularJS Github Card 
 
