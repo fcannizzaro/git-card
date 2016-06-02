@@ -1,5 +1,5 @@
 @import url(https://code.getmdl.io/1.1.3/material.indigo-pink.min.css);
-@import url(../lib/git-card.css);
+@import url(../lib/git-card.min.css);
 
 	body{
 		background-color: #eee;
