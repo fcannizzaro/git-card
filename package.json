@@ -1,6 +1,6 @@
 {
     "name": "git-card",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "AngularJS Github Card",
     "main": "dist/git-card.js",
     "scripts": {

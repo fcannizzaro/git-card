@@ -2,6 +2,7 @@
     "name": "git-card",
     "description": "AngularJS Github Card",
     "main": "dis/git-card.js",
+    "version": "1.0.5",
     "authors": [
         "Francesco Cannizzaro (fcannizzaro)"
     ],
